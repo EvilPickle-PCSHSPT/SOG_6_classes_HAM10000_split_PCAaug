@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import glob
 
-def pca_aug_dir(image_dir, output_dir):
+def pca_aug_dir(image_dir, output_dir, classes_label):
     extension = '.jpg'
     image_dir = image_dir + '/*' + extension
     pca_list = []
@@ -40,31 +40,31 @@ def pca_aug_dir(image_dir, output_dir):
         # print(i, image.shape)
 
     for i, new_image in enumerate(pca_list):
-        cv2.imwrite('{}{}{}{}'.format(output_dir + '/', 'output_',i+1, extension), new_image)
+        cv2.imwrite('{}{}{}{}'.format(output_dir + '/', 'pca_aug_' + classes_label, i+1, extension), new_image)
         # cv2.imread(output_dir.format(i), new_image)
     #     # imgplot = plt.imshow(pca_color_image)
     #     # plt.show()
 
 # Train set
-pca_aug_dir('image/cc_train/akiec', 'aug_image/pca-aug_train/akiec') # akiec
-pca_aug_dir('image/cc_train/bcc', 'aug_image/pca-aug_train/bcc') # bcc
-pca_aug_dir('image/cc_train/bkl', 'aug_image/pca-aug_train/bkl') # bkl
-pca_aug_dir('image/cc_train/df', 'aug_image/pca-aug_train/df') # df
-pca_aug_dir('image/cc_train/mel', 'aug_image/pca-aug_train/mel') # mel
-pca_aug_dir('image/cc_train/vasc', 'aug_image/pca-aug_train/vasc') # vasc
+pca_aug_dir('image/cc_train/akiec', 'aug_image/pca-aug_train/akiec', 'akiec') # akiec
+pca_aug_dir('image/cc_train/bcc', 'aug_image/pca-aug_train/bcc', 'bcc') # bcc
+pca_aug_dir('image/cc_train/bkl', 'aug_image/pca-aug_train/bkl', 'bkl') # bkl
+pca_aug_dir('image/cc_train/df', 'aug_image/pca-aug_train/df', 'df') # df
+pca_aug_dir('image/cc_train/mel', 'aug_image/pca-aug_train/mel', 'mel') # mel
+pca_aug_dir('image/cc_train/vasc', 'aug_image/pca-aug_train/vasc', 'vasc') # vasc
 
 # Validation set
-pca_aug_dir('image/cc_val/akiec', 'aug_image/pca-aug_val/akiec') # akiec
-pca_aug_dir('image/cc_val/bcc', 'aug_image/pca-aug_val/bcc') # bcc
-pca_aug_dir('image/cc_val/bkl', 'aug_image/pca-aug_val/bkl') # bkl
-pca_aug_dir('image/cc_val/df', 'aug_image/pca-aug_val/df') # df
-pca_aug_dir('image/cc_val/mel', 'aug_image/pca-aug_valmel') # mel
-pca_aug_dir('image/cc_val/vasc', 'aug_image/pca-aug_val/vasc') # vasc
+pca_aug_dir('image/cc_val/akiec', 'aug_image/pca-aug_val/akiec', 'akiec') # akiec
+pca_aug_dir('image/cc_val/bcc', 'aug_image/pca-aug_val/bcc', 'bcc') # bcc
+pca_aug_dir('image/cc_val/bkl', 'aug_image/pca-aug_val/bkl', 'bkl') # bkl
+pca_aug_dir('image/cc_val/df', 'aug_image/pca-aug_val/df', 'df') # df
+pca_aug_dir('image/cc_val/mel', 'aug_image/pca-aug_valmel', 'mel') # mel
+pca_aug_dir('image/cc_val/vasc', 'aug_image/pca-aug_val/vasc', 'vasc') # vasc
 
 # Test set
-pca_aug_dir('image/cc_test/akiec', 'aug_image/pca-aug_test/akiec') # akiec
-pca_aug_dir('image/cc_test/bcc', 'aug_image/pca-aug_test/bcc') # bcc
-pca_aug_dir('image/cc_test/bkl', 'aug_image/pca-aug_test/bkl') # bkl
-pca_aug_dir('image/cc_test/df', 'aug_image/pca-aug_test/df') # df
-pca_aug_dir('image/cc_test/mel', 'aug_image/pca-aug_test/mel') # mel
-pca_aug_dir('image/cc_test/vasc', 'aug_image/pca-aug_test/vasc') # vasc   
+pca_aug_dir('image/cc_test/akiec', 'aug_image/pca-aug_test/akiec', 'akiec') # akiec
+pca_aug_dir('image/cc_test/bcc', 'aug_image/pca-aug_test/bcc', 'bcc') # bcc
+pca_aug_dir('image/cc_test/bkl', 'aug_image/pca-aug_test/bkl', 'bkl') # bkl
+pca_aug_dir('image/cc_test/df', 'aug_image/pca-aug_test/df', 'df') # df
+pca_aug_dir('image/cc_test/mel', 'aug_image/pca-aug_test/mel', 'mel') # mel
+pca_aug_dir('image/cc_test/vasc', 'aug_image/pca-aug_test/vasc', 'vasc') # vasc   
